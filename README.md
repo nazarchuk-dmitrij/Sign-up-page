@@ -1,1 +1,1 @@
-# Sign up page
+Simple Sign up page
