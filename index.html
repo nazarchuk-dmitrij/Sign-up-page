@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Creating new User Profile" />
+    <title>New Profile</title>
+    <link data-require="reset.css@*" data-semver="2.0.0" rel="stylesheet" href="https://cdn.jsdelivr.net/meyer-reset/2.0/reset.min.css" />
+    <link rel="stylesheet" href="src/css/my-app.css" />
+  </head>
+
+  <body>
+    <section class="top-bar">
+      <div class="top-bar__icon"></div>
+      <h2 class="top-bar__header">Add new User Profile</h2>
+    </section>
+    <main class="content-wrapper">
+      <aside class="sidebar">
+        <ul class="sidebar__steps">
+          <li class="sidebar__step sidebar__step--is-active" data-step="1">Add login details</li>
+          <li class="sidebar__step" data-step="2">Select the user group</li>
+          <li class="sidebar__step" data-step="3">Add an avatar</li>
+          <li class="sidebar__step" data-step="4">Submit the form</li>
+        </ul>
+        <div class="sidebar__app-store"></div>
+      </aside>
+      <form class="form">
+        <section class="form__error-box">Please fill out all fields before proceeding to the next step</section>
+        <section class="form__step details form__step--is-active" data-step="1">
+          <label class="details__label" for="userEmail">Email</label>
+          <input class="details__input" type="email" name="userEmail" id="userEmail" value="" placeholder="[Required]" />
+          <label class="details__label" for="userPassword">Password</label>
+          <input class="details__input" type="password" name="userPassword" id="userPassword" value="" placeholder="[Required]" />
+          <label class="details__label" for="confirmPassword">Verify Password</label>
+          <input class="details__input" type="password" name="confirmPassword" id="confirmPassword" value="" placeholder="[Required]" />
+        </section>
+        <section class="form__step group" data-step="2">
+          <h3 class="group__header">Choose the User Group</h3>
+          <section class="group__select-wrapper">
+            <label class="group__label" for="userGroup">User Group</label>
+            <span class="group__description">User Group to add the users to</span>
+            <select class="group__select" name="userGroup" id="userGroup">
+              <option value="" selected="" disabled="" hidden="">None</option>
+            </select>
+          </section>
+        </section>
+        <section class="form__step avatar" data-step="3">
+          <div class="avatar__top-text">
+            <span class="avatar__title">Avatar</span>
+            <span class="avatar__description">User Avatar. It is recommended that you use a file with the GIF or PNG format. The recommended size is 512x512 pixels.</span>
+          </div>
+          <img src="" alt="User Avatar" class="avatar__img" />
+          <button type="button" class="form-btn form-btn--big form-btn--neutral js-avatar__open-modal">Upload Avatar</button>
+          <div class="modal__overlay"></div>
+          <section class="modal">
+            <div class="modal__error">
+                    Only Image files are allowed
+                </div>
+            <div class="modal__top-bar">
+                    Avatar
+                </div>
+            <div class="modal__middle">
+              <span class="modal__text modal__text--description">User Avatar. It is recommended that you use a file with the GIF or PNG format. The recommended size is 512x512 pixels.</span>
+              <label for="filePath" class="form-btn form-btn--neutral js-modal__path-label">Choose file</label>
+              <input type="file" name="filePath" id="filePath" class="modal__file-btn js-modal__path" />
+              <span class="modal__text modal__text--path js-modal__span">No File Chosen</span>
+            </div>
+            <div class="modal__buttons">
+              <button type="button" class="form-btn form-btn--big js-modal__cancel">Cancel</button>
+              <button type="button" class="form-btn form-btn--big form-btn--blue js-modal__upload" disabled="">Upload</button>
+            </div>
+          </section>
+        </section>
+        <section class="form__step final" data-step="4">
+          <span class="final__name">Email</span>
+          <span class="final__value js-final__email"></span>
+          <span class="final__name">Group</span>
+          <span class="final__value js-final__group"></span>
+          <span class="final__name">Avatar</span>
+          <img src="" alt="User Avatar" class="final__avatar js-final__avatar" />
+        </section>
+        <div class="btn-wrapper">
+          <button type="reset" class="form-btn js-btn-cancel">Cancel</button>
+          <button type="button" class="form-btn form-btn--blue js-btn-next js-is-disabled">Next</button>
+          <button type="submit" class="form-btn form-btn--blue form-btn--is-disabled js-btn-submit">Submit</button>
+        </div>
+      </form>
+    </main>
+    <script data-require="jquery@*" data-semver="3.2.1" src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="src/js/mock.js" charset="utf-8"></script>
+    <script type="text/javascript" src="src/js/my-app.js" charset="utf-8"></script>
+  </body>
+
+</html>
